@@ -48,4 +48,8 @@ public class Deck {
         }
         return str;
     }
+
+    public int getCurrentSize() {
+        return deck.size();
+    }
 }
