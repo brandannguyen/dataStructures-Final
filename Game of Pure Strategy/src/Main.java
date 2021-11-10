@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import com.sun.tools.javac.tree.DCTree.DCSystemProperty;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
@@ -20,10 +23,11 @@ public class Main extends Application {
         List d = new ArrayList<>();
         Deck deck = new Deck("Clubs", d);
         d = deck.setDeck(13);
+        System.out.println();
+        System.out.println(deck.flipCard());
+        System.out.println(deck.toString());
         launch(args);
     }
-    
-   
 
     public void start(Stage stage) throws Exception {
         

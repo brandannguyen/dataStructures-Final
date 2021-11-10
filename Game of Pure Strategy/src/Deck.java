@@ -38,4 +38,14 @@ public class Deck {
         deck.remove(random);
         return card;
     }
+    
+    public String toString()
+    {
+        String str = "";
+        for(int i = 0; i < deck.size(); i++)
+        {
+            str += deck.get(i).toString() + ", ";
+        }
+        return str;
+    }
 }
