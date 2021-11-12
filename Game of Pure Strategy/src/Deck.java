@@ -25,7 +25,6 @@ public class Deck {
        if(n > 0)
        {
            deck.add(n);
-           System.out.print(n + ", ");
            setDeck(n-1);
        }
        return deck;

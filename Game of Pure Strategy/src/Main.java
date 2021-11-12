@@ -37,11 +37,9 @@ public class Main extends Application {
         System.out.println();
         playerHand.setDeck(13);
         int card = deck.flipCard();
-        System.out.println();
-        System.out.println(card);
-        System.out.println(deck.toString());
-        System.out.println(playerHand.toString());
         Image img = new Image(getCardNum(card));
+        Image back = new Image("Cards/CardBack.jpg");
+        ImageView viewBack = new ImageView(back);
         ImageView view = new ImageView(img);
         Button flip = new Button("Flip");
         flip.setMaxWidth(100);
@@ -50,15 +48,23 @@ public class Main extends Application {
         view.setY(300); 
         view.setFitHeight(80);
         view.setPreserveRatio(true);
+        viewBack.setX(480); 
+        viewBack.setY(300); 
+        viewBack.setFitHeight(80);
+        viewBack.setPreserveRatio(true);
         flip.setOnAction(value ->  {
            if(deck.getCurrentSize() > 0)
            {
                int newCard = deck.flipCard();
                Image image = new Image(getCardNum(newCard));
                view.setImage(image);
+               if(deck.getCurrentSize() == 0)
+               {
+                   viewBack.setImage(null);
+               }
            }
          });
-        Group root = new Group(view, flip);
+        Group root = new Group(view, viewBack, flip);
         Scene scene = new Scene(root, 1280, 720, Color.WHITE);
         stage.setTitle("Button Graphics");
         stage.setScene(scene);
