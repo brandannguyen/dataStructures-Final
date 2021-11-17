@@ -26,6 +26,7 @@ public class Main extends Application {
     static Deck deck = new Deck("Clubs", d);
     static Deck playerHand = new Deck("Hearts", p);
     static Deck cpuHand = new Deck("Diamonds", a);
+    static int turn = 1;
     
     public static void main(String[] args)
     {
@@ -93,8 +94,24 @@ public class Main extends Application {
         return s += String.valueOf(n) + "_of_clubs.png";
     }
     
-    public void play()
-    {
-        
+    public static void gameStart() {
+        //this method will be called when the start button is clicked
+        //calls stage builder setup and creates initial decks and hands
+    }
+
+    public static void gameTurn() {
+        //function for calling next point-card
+        //function for taking player's bet
+        //function for taking ai's bet
+        //function for bet comparison / round win
+
+        //test
+        if(turn == 1) {
+            turn = 2;
+        }
+        else {
+            turn = 1;
+        }
+        gameTurn();
     }
 }
